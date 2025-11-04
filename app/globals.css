@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 14, 39;
+  --background-end-rgb: 5, 7, 20;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Stars background effect */
+.stars-bg {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 60px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 50px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 80px 10px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 90px 40px, #eee, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 160px 30px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: moveStars 200s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 100px;
+  }
+}
+
+

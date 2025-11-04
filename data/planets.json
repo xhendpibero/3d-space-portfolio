@@ -1,0 +1,257 @@
+{
+  "galaxy": {
+    "name": "Bima Sakti (Milky Way)",
+    "description": "Our home galaxy, a barred spiral galaxy containing billions of stars, including our solar system.",
+    "type": "Barred Spiral Galaxy",
+    "diameter": "100,000 - 180,000 light-years",
+    "stars": "100-400 billion",
+    "age": "~13.6 billion years"
+  },
+  "planets": [
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "type": "Terrestrial",
+      "distance": "57.9 million km",
+      "distanceAU": 0.39,
+      "diameter": "4,879 km",
+      "mass": "3.3 × 10²³ kg",
+      "temperature": "-173°C to 427°C",
+      "dayLength": "59 Earth days",
+      "yearLength": "88 Earth days",
+      "moons": 0,
+      "description": "The closest planet to the Sun and the smallest in our solar system. Despite its proximity, Mercury experiences extreme temperature variations.",
+      "composition": "Iron core (70%), rocky mantle, thin silicate crust",
+      "atmosphere": "Very thin, composed of oxygen, sodium, hydrogen, helium, and potassium",
+      "features": [
+        "No atmosphere to retain heat",
+        "Largest temperature variation in the solar system",
+        "Heavily cratered surface",
+        "Ice exists in permanently shadowed craters"
+      ],
+      "color": "#8C7853",
+      "radius": 0.38,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "type": "Terrestrial",
+      "distance": "108.2 million km",
+      "distanceAU": 0.72,
+      "diameter": "12,104 km",
+      "mass": "4.87 × 10²⁴ kg",
+      "temperature": "462°C",
+      "dayLength": "243 Earth days",
+      "yearLength": "225 Earth days",
+      "moons": 0,
+      "description": "The hottest planet in our solar system, Venus is shrouded in thick clouds of sulfuric acid. It rotates backwards and has a runaway greenhouse effect.",
+      "composition": "Iron core, rocky mantle, thick silicate crust",
+      "atmosphere": "Dense, 96% carbon dioxide, 3.5% nitrogen, sulfuric acid clouds",
+      "features": [
+        "Runaway greenhouse effect",
+        "Retrograde rotation (spins backwards)",
+        "Extreme surface pressure (92x Earth)",
+        "Volcanic surface with thousands of volcanoes"
+      ],
+      "color": "#FFC649",
+      "radius": 0.95,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "earth",
+      "name": "Earth",
+      "type": "Terrestrial",
+      "distance": "149.6 million km",
+      "distanceAU": 1.0,
+      "diameter": "12,756 km",
+      "mass": "5.97 × 10²⁴ kg",
+      "temperature": "-88°C to 58°C",
+      "dayLength": "24 hours",
+      "yearLength": "365.25 days",
+      "moons": 1,
+      "description": "Our home planet, the only known celestial body with life. Features liquid water, a protective atmosphere, and a magnetic field.",
+      "composition": "Iron-nickel core, silicate mantle, crust with oceans and continents",
+      "atmosphere": "78% nitrogen, 21% oxygen, 1% other gases",
+      "features": [
+        "Only known planet with life",
+        "71% surface covered by water",
+        "Protective magnetic field",
+        "Moderate temperature range",
+        "Active plate tectonics"
+      ],
+      "color": "#6B93D6",
+      "radius": 1.0,
+      "position": [0, 0, 0],
+      "special": true
+    },
+    {
+      "id": "mars",
+      "name": "Mars",
+      "type": "Terrestrial",
+      "distance": "227.9 million km",
+      "distanceAU": 1.52,
+      "diameter": "6,792 km",
+      "mass": "6.39 × 10²³ kg",
+      "temperature": "-153°C to 20°C",
+      "dayLength": "24.6 hours",
+      "yearLength": "687 Earth days",
+      "moons": 2,
+      "description": "The Red Planet, named for its iron oxide-rich surface. Once had flowing water and is a prime target for future human exploration.",
+      "composition": "Iron-nickel core, rocky mantle, iron-rich crust",
+      "atmosphere": "Thin, 95% carbon dioxide, 2.6% nitrogen, 1.9% argon",
+      "features": [
+        "Red color from iron oxide (rust)",
+        "Largest volcano in solar system (Olympus Mons)",
+        "Evidence of ancient riverbeds",
+        "Polar ice caps of water and carbon dioxide",
+        "Two small moons: Phobos and Deimos"
+      ],
+      "color": "#CD5C5C",
+      "radius": 0.53,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "type": "Gas Giant",
+      "distance": "778.5 million km",
+      "distanceAU": 5.2,
+      "diameter": "142,984 km",
+      "mass": "1.90 × 10²⁷ kg",
+      "temperature": "-110°C",
+      "dayLength": "9.9 hours",
+      "yearLength": "12 Earth years",
+      "moons": 95,
+      "description": "The largest planet in our solar system, a gas giant with a Great Red Spot storm larger than Earth. Has a strong magnetic field and many moons.",
+      "composition": "Dense core of rock and ice, thick layer of liquid metallic hydrogen, outer layer of molecular hydrogen and helium",
+      "atmosphere": "90% hydrogen, 10% helium, traces of methane, water, ammonia",
+      "features": [
+        "Great Red Spot (giant storm)",
+        "Strongest magnetic field in solar system",
+        "79 known moons (including the four Galilean moons)",
+        "Acts as a cosmic vacuum cleaner",
+        "Faint ring system"
+      ],
+      "color": "#D8CA9D",
+      "radius": 11.2,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "saturn",
+      "name": "Saturn",
+      "type": "Gas Giant",
+      "distance": "1.43 billion km",
+      "distanceAU": 9.5,
+      "diameter": "120,536 km",
+      "mass": "5.68 × 10²⁶ kg",
+      "temperature": "-140°C",
+      "dayLength": "10.7 hours",
+      "yearLength": "29 Earth years",
+      "moons": 146,
+      "description": "Famous for its spectacular ring system. The least dense planet, it would float in water. Has a hexagonal storm at its north pole.",
+      "composition": "Rocky core, layer of liquid metallic hydrogen, liquid hydrogen and helium, gaseous atmosphere",
+      "atmosphere": "96% hydrogen, 3% helium, traces of methane and ammonia",
+      "features": [
+        "Spectacular ring system (ice and rock particles)",
+        "146 known moons including Titan (larger than Mercury)",
+        "Less dense than water",
+        "Hexagonal storm pattern at north pole",
+        "Beautiful cloud bands"
+      ],
+      "color": "#FAD5A5",
+      "radius": 9.45,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "uranus",
+      "name": "Uranus",
+      "type": "Ice Giant",
+      "distance": "2.87 billion km",
+      "distanceAU": 19.2,
+      "diameter": "51,118 km",
+      "mass": "8.68 × 10²⁵ kg",
+      "temperature": "-195°C",
+      "dayLength": "17.2 hours",
+      "yearLength": "84 Earth years",
+      "moons": 27,
+      "description": "An ice giant that rotates on its side. Its blue-green color comes from methane in its atmosphere. Has faint rings and 27 moons.",
+      "composition": "Rocky core, mantle of water, methane, and ammonia ices, atmosphere of hydrogen and helium",
+      "atmosphere": "83% hydrogen, 15% helium, 2% methane",
+      "features": [
+        "Rotates on its side (98° tilt)",
+        "Blue-green color from methane",
+        "13 faint rings",
+        "27 known moons",
+        "Coldest planetary atmosphere in solar system"
+      ],
+      "color": "#4FD0E7",
+      "radius": 4.01,
+      "position": [0, 0, 0]
+    },
+    {
+      "id": "neptune",
+      "name": "Neptune",
+      "type": "Ice Giant",
+      "distance": "4.50 billion km",
+      "distanceAU": 30.1,
+      "diameter": "49,528 km",
+      "mass": "1.02 × 10²⁶ kg",
+      "temperature": "-214°C",
+      "dayLength": "16.1 hours",
+      "yearLength": "165 Earth years",
+      "moons": 16,
+      "description": "The windiest planet with speeds up to 2,100 km/h. Deep blue color from methane. The farthest planet from the Sun.",
+      "composition": "Rocky core, mantle of water, methane, and ammonia ices, atmosphere of hydrogen, helium, and methane",
+      "atmosphere": "80% hydrogen, 19% helium, 1% methane",
+      "features": [
+        "Fastest winds in solar system (up to 2,100 km/h)",
+        "Deep blue color",
+        "14 known moons including Triton",
+        "Faint ring system",
+        "Great Dark Spot (giant storm)"
+      ],
+      "color": "#4166F5",
+      "radius": 3.88,
+      "position": [0, 0, 0]
+    }
+  ],
+  "categories": {
+    "Terrestrial": {
+      "description": "Rocky planets with solid surfaces, located in the inner solar system",
+      "planets": ["mercury", "venus", "earth", "mars"]
+    },
+    "Gas Giant": {
+      "description": "Large planets primarily composed of hydrogen and helium",
+      "planets": ["jupiter", "saturn"]
+    },
+    "Ice Giant": {
+      "description": "Planets with significant amounts of water, methane, and ammonia ices",
+      "planets": ["uranus", "neptune"]
+    }
+  },
+  "notes": [
+    {
+      "title": "Scale and Distance",
+      "content": "The distances in this visualization are not to scale. In reality, planets are millions of kilometers apart, and the solar system spans billions of kilometers.",
+      "type": "info"
+    },
+    {
+      "title": "Rotation Speeds",
+      "content": "Each planet has different rotation speeds. Gas giants rotate faster than terrestrial planets. The speed controls allow you to visualize these differences.",
+      "type": "info"
+    },
+    {
+      "title": "Milky Way Galaxy",
+      "content": "Our solar system is located in the Orion Arm of the Milky Way galaxy, about 27,000 light-years from the galactic center. It takes about 225-250 million years for our solar system to complete one orbit around the galaxy.",
+      "type": "galaxy"
+    },
+    {
+      "title": "Planet Colors",
+      "content": "Planet colors are based on their actual appearance as seen from space probes. These colors come from their surface composition and atmospheric gases.",
+      "type": "visual"
+    }
+  ]
+}
+
+
