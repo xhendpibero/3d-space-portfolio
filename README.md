@@ -2,6 +2,10 @@
 
 An immersive 3D interactive exploration of our solar system within the Milky Way galaxy (Bima Sakti). Built with Next.js, React Three Fiber, and Three.js.
 
+## Live Demo
+
+- Visit the live experience: https://3d-space-portfolio-seven.vercel.app/
+
 ## Features
 
 - 🌌 **3D Milky Way Visualization** - Stunning 3D representation of our solar system
