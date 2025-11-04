@@ -110,7 +110,7 @@ export default function ControlPanel() {
             onChange={(e) => setUseRealScale(e.target.checked)}
             className="form-checkbox h-4 w-4 text-primary-600 rounded focus:ring-primary-500"
           />
-          <span>Use real relative sizes (Sun ≫ Jupiter ≫ Earth)</span>
+          <span>Use real relative sizes</span>
         </label>
         <p className="text-xs text-gray-500 mt-1">
           Note: Real sizes are scaled down for visibility but preserve ratios.
