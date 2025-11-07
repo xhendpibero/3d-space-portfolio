@@ -56,20 +56,28 @@ export default function PlanetModal() {
   if (!planet) return null
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-        onClick={handleClose}
-      >
+    <AnimatePresence mode="wait">
+      {isModalOpen && selectedPlanet && planet && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          key="planet-modal-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={handleClose}
+        >
+          <motion.div
+            key="planet-modal-content"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ 
+              type: 'spring', 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.6
+            }}
           className="relative w-full max-w-4xl max-h-[90vh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
@@ -202,6 +210,7 @@ export default function PlanetModal() {
           </div>
         </motion.div>
       </motion.div>
+      )}
     </AnimatePresence>
   )
 }

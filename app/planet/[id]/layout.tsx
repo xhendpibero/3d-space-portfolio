@@ -2,8 +2,9 @@ import { Metadata } from 'next'
 import planetsData from '@/data/planets.json'
 import { Planet } from '@/types'
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const planet = planetsData.planets.find((p) => p.id === params.id) as Planet | undefined
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const planet = planetsData.planets.find((p) => p.id === id) as Planet | undefined
 
   if (!planet) {
     return {

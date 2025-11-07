@@ -23,38 +23,53 @@ export default function MoonListPanel({ planet }: MoonListPanelProps) {
   if (moons.length === 0) return null
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="fixed bottom-16 left-4 z-50"
-    >
+    <div className="fixed bottom-16 left-4 z-50">
       {/* Collapsed floating button */}
-      {!isOpen && (
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setIsOpen(true)}
-          className="w-14 h-14 rounded-full bg-primary-600 hover:bg-primary-700 text-white flex items-center justify-center shadow-xl border border-primary-500/40 transition-all duration-200"
-          aria-label="Open moons list"
-          style={{
-            boxShadow: `0 0 20px ${planet.color}66`,
-          }}
-        >
-          <FaInfoCircle className="text-xl" />
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
-            {moons.length}
-          </span>
-        </motion.button>
-      )}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            key="moon-list-button"
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+            transition={{ 
+              type: 'spring', 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.6,
+              delay: 0.15
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsOpen(true)}
+            className="w-14 h-14 rounded-full bg-primary-600 hover:bg-primary-700 text-white flex items-center justify-center shadow-xl border border-primary-500/40 transition-all duration-200 relative"
+            aria-label="Open moons list"
+            style={{
+              boxShadow: `0 0 20px ${planet.color}66`,
+            }}
+          >
+            <FaInfoCircle className="text-xl" />
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+              {moons.length}
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Expanded panel */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="moon-list-panel"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            transition={{ 
+              type: 'spring', 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.6
+            }}
             className="bg-gray-900/95 backdrop-blur-sm rounded-lg shadow-2xl border border-gray-700 overflow-hidden w-[22rem] sm:w-[24rem] max-h-[75vh] flex flex-col"
           >
             {/* Header */}
@@ -155,7 +170,7 @@ export default function MoonListPanel({ planet }: MoonListPanelProps) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   )
 }
 

@@ -49,23 +49,31 @@ export default function MoonModal() {
   if (!moon) return null
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-        onClick={handleClose}
-      >
+    <AnimatePresence mode="wait">
+      {isMoonModalOpen && selectedMoon && moon && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-3xl max-h-[90vh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden"
-          onClick={(e) => e.stopPropagation()}
+          key="moon-modal-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={handleClose}
         >
+          <motion.div
+            key="moon-modal-content"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ 
+              type: 'spring', 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.6
+            }}
+            className="relative w-full max-w-3xl max-h-[90vh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
           {/* Header */}
           <div
             className="p-8 text-white relative"
@@ -97,9 +105,19 @@ export default function MoonModal() {
           </div>
 
           {/* Content */}
-          <div className="p-8 overflow-y-auto max-h-[calc(90vh-200px)]">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+            className="p-8 overflow-y-auto max-h-[calc(90vh-200px)]"
+          >
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+            >
               <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
                 <div className="flex items-center text-primary-400 mb-2">
                   <FaRuler className="mr-2" />
@@ -128,11 +146,16 @@ export default function MoonModal() {
                 </div>
                 <p className="text-white font-bold text-sm">{moon.orbitalPeriod}</p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Discovery Info */}
             {(moon.discoveredBy || moon.discoveredYear) && (
-              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700 mb-8">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+                className="bg-gray-800/50 rounded-lg p-6 border border-gray-700 mb-8"
+              >
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                   <FaInfoCircle className="mr-2 text-primary-400" />
                   Discovery
@@ -151,11 +174,16 @@ export default function MoonModal() {
                     </p>
                   )}
                 </div>
-              </div>
+              </motion.div>
             )}
 
             {/* Features */}
-            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+              className="bg-gray-800/50 rounded-lg p-6 border border-gray-700"
+            >
               <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {moon.features.map((feature, index) => (
@@ -165,10 +193,11 @@ export default function MoonModal() {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </motion.div>
+      )}
     </AnimatePresence>
   )
 }
