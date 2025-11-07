@@ -1,10 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 import { FaPlay, FaPause, FaPlus, FaMinus, FaUndo } from 'react-icons/fa'
 import { useSpaceStore } from '@/store/useSpaceStore'
 
 export default function ControlPanel() {
+  const pathname = usePathname()
+  const isPlanetDetail = pathname?.startsWith('/planet/')
   const {
     rotationSpeed,
     setRotationSpeed,
@@ -12,6 +15,8 @@ export default function ControlPanel() {
     setZoomLevel,
     setSelectedPlanet,
     setIsModalOpen,
+    setSelectedMoon,
+    setIsMoonModalOpen,
     useRealScale,
     setUseRealScale,
   } = useSpaceStore()
@@ -22,14 +27,30 @@ export default function ControlPanel() {
   }
 
   const handleZoomChange = (delta: number) => {
-    const newZoom = Math.max(5, Math.min(100, zoomLevel + delta))
-    setZoomLevel(newZoom)
+    if (isPlanetDetail) {
+      // In planet detail, zoom is handled by OrbitControls
+      // We can still update the zoom level for reference
+      const newZoom = Math.max(3, Math.min(30, zoomLevel + delta))
+      setZoomLevel(newZoom)
+    } else {
+      // In main view, use the normal zoom
+      const newZoom = Math.max(5, Math.min(100, zoomLevel + delta))
+      setZoomLevel(newZoom)
+    }
   }
 
   const resetView = () => {
-    setZoomLevel(15)
-    setSelectedPlanet(null)
-    setIsModalOpen(false)
+    if (isPlanetDetail) {
+      // Reset planet detail view
+      setZoomLevel(8)
+      setSelectedMoon(null)
+      setIsMoonModalOpen(false)
+    } else {
+      // Reset main view
+      setZoomLevel(15)
+      setSelectedPlanet(null)
+      setIsModalOpen(false)
+    }
   }
 
   return (
@@ -88,7 +109,11 @@ export default function ControlPanel() {
           <div className="flex-1 bg-gray-800 rounded-full h-2 relative">
             <div
               className="bg-primary-500 h-2 rounded-full transition-all"
-              style={{ width: `${((zoomLevel - 5) / 95) * 100}%` }}
+              style={{ 
+                width: isPlanetDetail 
+                  ? `${((zoomLevel - 3) / 27) * 100}%` 
+                  : `${((zoomLevel - 5) / 95) * 100}%` 
+              }}
             />
           </div>
           <button
@@ -99,23 +124,30 @@ export default function ControlPanel() {
             <FaPlus className="text-sm" />
           </button>
         </div>
+        {isPlanetDetail && (
+          <p className="text-xs text-gray-500 mt-1">
+            Use mouse wheel or controls to zoom in/out
+          </p>
+        )}
       </div>
 
-      {/* Real Scale Toggle */}
-      <div className="mb-4">
-        <label className="flex items-center space-x-2 text-sm text-gray-300">
-          <input
-            type="checkbox"
-            checked={useRealScale}
-            onChange={(e) => setUseRealScale(e.target.checked)}
-            className="form-checkbox h-4 w-4 text-primary-600 rounded focus:ring-primary-500"
-          />
-          <span>Use real relative sizes</span>
-        </label>
-        <p className="text-xs text-gray-500 mt-1">
-          Note: Real sizes are scaled down for visibility but preserve ratios.
-        </p>
-      </div>
+      {/* Real Scale Toggle - Only show in main view */}
+      {!isPlanetDetail && (
+        <div className="mb-4">
+          <label className="flex items-center space-x-2 text-sm text-gray-300">
+            <input
+              type="checkbox"
+              checked={useRealScale}
+              onChange={(e) => setUseRealScale(e.target.checked)}
+              className="form-checkbox h-4 w-4 text-primary-600 rounded focus:ring-primary-500"
+            />
+            <span>Use real relative sizes</span>
+          </label>
+          <p className="text-xs text-gray-500 mt-1">
+            Note: Real sizes are scaled down for visibility but preserve ratios.
+          </p>
+        </div>
+      )}
 
       {/* Reset Button */}
       <button
@@ -129,11 +161,23 @@ export default function ControlPanel() {
       {/* Instructions */}
       <div className="mt-4 pt-4 border-t border-gray-700">
         <p className="text-xs text-gray-400">
-          • Click planets to view details
-          <br />
-          • Drag to rotate camera
-          <br />
-          • Scroll to zoom
+          {isPlanetDetail ? (
+            <>
+              • Click moons to view details
+              <br />
+              • Drag to rotate camera
+              <br />
+              • Scroll or use controls to zoom
+            </>
+          ) : (
+            <>
+              • Click planets to view details
+              <br />
+              • Drag to rotate camera
+              <br />
+              • Scroll to zoom
+            </>
+          )}
         </p>
       </div>
     </motion.div>

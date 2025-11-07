@@ -70,6 +70,27 @@
       "dayLength": "24 hours",
       "yearLength": "365.25 days",
       "moons": 1,
+      "moonList": [
+        {
+          "id": "moon",
+          "name": "Moon",
+          "diameter": "3,474 km",
+          "mass": "7.35 × 10²² kg",
+          "distance": "384,400 km",
+          "orbitalPeriod": "27.3 days",
+          "description": "Earth's only natural satellite, the Moon influences tides and stabilizes Earth's axial tilt. It's the fifth largest moon in the solar system.",
+          "discoveredBy": "Ancient",
+          "features": [
+            "Tidally locked to Earth",
+            "Causes ocean tides",
+            "Stabilizes Earth's rotation",
+            "Largest moon relative to its planet",
+            "No atmosphere"
+          ],
+          "color": "#C0C0C0",
+          "radius": 0.27
+        }
+      ],
       "description": "Our home planet, the only known celestial body with life. Features liquid water, a protective atmosphere, and a magnetic field.",
       "composition": "Iron-nickel core, silicate mantle, crust with oceans and continents",
       "atmosphere": "78% nitrogen, 21% oxygen, 1% other gases",
@@ -97,6 +118,48 @@
       "dayLength": "24.6 hours",
       "yearLength": "687 Earth days",
       "moons": 2,
+      "moonList": [
+        {
+          "id": "phobos",
+          "name": "Phobos",
+          "diameter": "22.2 km",
+          "mass": "1.07 × 10¹⁶ kg",
+          "distance": "9,376 km",
+          "orbitalPeriod": "7.66 hours",
+          "description": "The larger and closer of Mars's two moons. Phobos is irregularly shaped and orbits very close to Mars, completing an orbit in less than a Martian day.",
+          "discoveredBy": "Asaph Hall",
+          "discoveredYear": "1877",
+          "features": [
+            "Closest moon to its planet",
+            "Orbits faster than Mars rotates",
+            "Will crash into Mars in ~50 million years",
+            "Heavily cratered surface",
+            "Irregular potato-like shape"
+          ],
+          "color": "#8B7355",
+          "radius": 0.0017
+        },
+        {
+          "id": "deimos",
+          "name": "Deimos",
+          "diameter": "12.6 km",
+          "mass": "1.48 × 10¹⁵ kg",
+          "distance": "23,463 km",
+          "orbitalPeriod": "30.3 hours",
+          "description": "The smaller and more distant of Mars's two moons. Deimos has a smoother surface than Phobos and takes longer to orbit Mars.",
+          "discoveredBy": "Asaph Hall",
+          "discoveredYear": "1877",
+          "features": [
+            "Smaller than Phobos",
+            "Smoother surface",
+            "More distant from Mars",
+            "Irregular shape",
+            "May be a captured asteroid"
+          ],
+          "color": "#7A6B5A",
+          "radius": 0.0010
+        }
+      ],
       "description": "The Red Planet, named for its iron oxide-rich surface. Once had flowing water and is a prime target for future human exploration.",
       "composition": "Iron-nickel core, rocky mantle, iron-rich crust",
       "atmosphere": "Thin, 95% carbon dioxide, 2.6% nitrogen, 1.9% argon",
@@ -123,6 +186,248 @@
       "dayLength": "9.9 hours",
       "yearLength": "12 Earth years",
       "moons": 95,
+      "moonList": [
+        {
+          "id": "io",
+          "name": "Io",
+          "diameter": "3,643 km",
+          "mass": "8.93 × 10²² kg",
+          "distance": "421,700 km",
+          "orbitalPeriod": "1.77 days",
+          "description": "The most volcanically active body in the solar system, with over 400 active volcanoes. Its surface is constantly being resurfaced by volcanic activity.",
+          "discoveredBy": "Galileo Galilei",
+          "discoveredYear": "1610",
+          "features": [
+            "Most volcanically active body in solar system",
+            "Sulfur-rich surface",
+            "Tidally heated by Jupiter",
+            "No impact craters (surface too young)",
+            "Yellow-orange color from sulfur"
+          ],
+          "color": "#FFD700",
+          "radius": 0.29
+        },
+        {
+          "id": "europa",
+          "name": "Europa",
+          "diameter": "3,122 km",
+          "mass": "4.80 × 10²² kg",
+          "distance": "671,034 km",
+          "orbitalPeriod": "3.55 days",
+          "description": "An icy moon with a subsurface ocean that may contain more water than Earth. Considered one of the best candidates for finding extraterrestrial life.",
+          "discoveredBy": "Galileo Galilei",
+          "discoveredYear": "1610",
+          "features": [
+            "Subsurface ocean of liquid water",
+            "Icy surface with cracks",
+            "Potential for life",
+            "Smooth, young surface",
+            "Strong magnetic field"
+          ],
+          "color": "#E6E6FA",
+          "radius": 0.25
+        },
+        {
+          "id": "ganymede",
+          "name": "Ganymede",
+          "diameter": "5,268 km",
+          "mass": "1.48 × 10²³ kg",
+          "distance": "1,070,412 km",
+          "orbitalPeriod": "7.15 days",
+          "description": "The largest moon in the solar system, larger than Mercury. It has its own magnetic field and a subsurface ocean.",
+          "discoveredBy": "Galileo Galilei",
+          "discoveredYear": "1610",
+          "features": [
+            "Largest moon in solar system",
+            "Has its own magnetic field",
+            "Subsurface ocean",
+            "Mix of old dark terrain and young bright terrain",
+            "Larger than Mercury"
+          ],
+          "color": "#708090",
+          "radius": 0.41
+        },
+        {
+          "id": "callisto",
+          "name": "Callisto",
+          "diameter": "4,821 km",
+          "mass": "1.08 × 10²³ kg",
+          "distance": "1,882,709 km",
+          "orbitalPeriod": "16.69 days",
+          "description": "The most heavily cratered object in the solar system. It's the outermost of Jupiter's four large Galilean moons.",
+          "discoveredBy": "Galileo Galilei",
+          "discoveredYear": "1610",
+          "features": [
+            "Most heavily cratered surface",
+            "Oldest surface in solar system",
+            "Possible subsurface ocean",
+            "Dark, icy surface",
+            "Farthest from Jupiter of Galilean moons"
+          ],
+          "color": "#2F4F4F",
+          "radius": 0.38
+        },
+        {
+          "id": "amalthea",
+          "name": "Amalthea",
+          "diameter": "167 km",
+          "mass": "2.08 × 10¹⁸ kg",
+          "distance": "181,400 km",
+          "orbitalPeriod": "0.50 days",
+          "description": "The fifth-largest moon of Jupiter, located within the main ring. It's irregularly shaped and reddish in color.",
+          "discoveredBy": "Edward Emerson Barnard",
+          "discoveredYear": "1892",
+          "features": [
+            "Irregular potato-like shape",
+            "Reddish color from sulfur",
+            "Located within Jupiter's main ring",
+            "Heavily cratered surface",
+            "One of the innermost moons"
+          ],
+          "color": "#8B4513",
+          "radius": 0.013
+        },
+        {
+          "id": "himalia",
+          "name": "Himalia",
+          "diameter": "139.6 km",
+          "mass": "4.19 × 10¹⁸ kg",
+          "distance": "11,461,000 km",
+          "orbitalPeriod": "250.6 days",
+          "description": "The largest irregular satellite of Jupiter. It's likely a captured asteroid from the outer solar system.",
+          "discoveredBy": "Charles Dillon Perrine",
+          "discoveredYear": "1904",
+          "features": [
+            "Largest irregular moon of Jupiter",
+            "Likely a captured asteroid",
+            "Dark, reddish surface",
+            "Irregular orbit",
+            "Part of the Himalia group"
+          ],
+          "color": "#654321",
+          "radius": 0.011
+        },
+        {
+          "id": "thebe",
+          "name": "Thebe",
+          "diameter": "98.6 km",
+          "mass": "4.3 × 10¹⁷ kg",
+          "distance": "221,900 km",
+          "orbitalPeriod": "0.68 days",
+          "description": "The fourth-largest moon of Jupiter, located within the main ring. It's irregularly shaped.",
+          "discoveredBy": "Stephen P. Synnott",
+          "discoveredYear": "1979",
+          "features": [
+            "Irregular shape",
+            "Located within Jupiter's ring",
+            "Heavily cratered",
+            "Dark surface",
+            "One of the innermost moons"
+          ],
+          "color": "#696969",
+          "radius": 0.008
+        },
+        {
+          "id": "metis",
+          "name": "Metis",
+          "diameter": "43 km",
+          "mass": "3.6 × 10¹⁶ kg",
+          "distance": "128,000 km",
+          "orbitalPeriod": "0.29 days",
+          "description": "The innermost moon of Jupiter, located within the main ring. It's one of the smallest moons.",
+          "discoveredBy": "Stephen P. Synnott",
+          "discoveredYear": "1979",
+          "features": [
+            "Innermost moon of Jupiter",
+            "Located within main ring",
+            "Very small size",
+            "Irregular shape",
+            "Fast orbital period"
+          ],
+          "color": "#808080",
+          "radius": 0.003
+        },
+        {
+          "id": "adrastea",
+          "name": "Adrastea",
+          "diameter": "16.4 km",
+          "mass": "2 × 10¹⁵ kg",
+          "distance": "129,000 km",
+          "orbitalPeriod": "0.30 days",
+          "description": "The second-innermost moon of Jupiter and one of the smallest. It's located within the main ring.",
+          "discoveredBy": "David C. Jewitt",
+          "discoveredYear": "1979",
+          "features": [
+            "Second-innermost moon",
+            "Very small size",
+            "Located within main ring",
+            "Irregular shape",
+            "Fast orbital period"
+          ],
+          "color": "#A9A9A9",
+          "radius": 0.001
+        },
+        {
+          "id": "carme",
+          "name": "Carme",
+          "diameter": "46.7 km",
+          "mass": "1.3 × 10¹⁷ kg",
+          "distance": "23,404,000 km",
+          "orbitalPeriod": "702.3 days",
+          "description": "A retrograde irregular moon of Jupiter, likely a captured asteroid. It's part of the Carme group.",
+          "discoveredBy": "Seth Barnes Nicholson",
+          "discoveredYear": "1938",
+          "features": [
+            "Retrograde orbit",
+            "Likely captured asteroid",
+            "Dark reddish surface",
+            "Irregular shape",
+            "Part of Carme group"
+          ],
+          "color": "#8B0000",
+          "radius": 0.004
+        },
+        {
+          "id": "pasiphae",
+          "name": "Pasiphae",
+          "diameter": "57.8 km",
+          "mass": "3.0 × 10¹⁷ kg",
+          "distance": "23,624,000 km",
+          "orbitalPeriod": "708.0 days",
+          "description": "A retrograde irregular moon of Jupiter and the largest member of the Pasiphae group. Likely a captured asteroid.",
+          "discoveredBy": "Philibert Jacques Melotte",
+          "discoveredYear": "1908",
+          "features": [
+            "Retrograde orbit",
+            "Largest of Pasiphae group",
+            "Likely captured asteroid",
+            "Dark reddish surface",
+            "Irregular shape"
+          ],
+          "color": "#8B0000",
+          "radius": 0.005
+        },
+        {
+          "id": "sinope",
+          "name": "Sinope",
+          "diameter": "35 km",
+          "mass": "7.5 × 10¹⁶ kg",
+          "distance": "23,939,000 km",
+          "orbitalPeriod": "724.5 days",
+          "description": "A retrograde irregular moon of Jupiter, likely a captured asteroid. It has a very dark surface.",
+          "discoveredBy": "Seth Barnes Nicholson",
+          "discoveredYear": "1914",
+          "features": [
+            "Retrograde orbit",
+            "Very dark surface",
+            "Likely captured asteroid",
+            "Irregular shape",
+            "Distant orbit"
+          ],
+          "color": "#000000",
+          "radius": 0.003
+        }
+      ],
       "description": "The largest planet in our solar system, a gas giant with a Great Red Spot storm larger than Earth. Has a strong magnetic field and many moons.",
       "composition": "Dense core of rock and ice, thick layer of liquid metallic hydrogen, outer layer of molecular hydrogen and helium",
       "atmosphere": "90% hydrogen, 10% helium, traces of methane, water, ammonia",
@@ -149,6 +454,268 @@
       "dayLength": "10.7 hours",
       "yearLength": "29 Earth years",
       "moons": 146,
+      "moonList": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "diameter": "5,150 km",
+          "mass": "1.35 × 10²³ kg",
+          "distance": "1,221,830 km",
+          "orbitalPeriod": "15.95 days",
+          "description": "Saturn's largest moon and the second-largest moon in the solar system. It has a thick atmosphere and liquid hydrocarbon lakes on its surface.",
+          "discoveredBy": "Christiaan Huygens",
+          "discoveredYear": "1655",
+          "features": [
+            "Thick nitrogen-rich atmosphere",
+            "Liquid methane and ethane lakes",
+            "Larger than Mercury",
+            "Only moon with dense atmosphere",
+            "Potential for life"
+          ],
+          "color": "#FFA500",
+          "radius": 0.40
+        },
+        {
+          "id": "enceladus",
+          "name": "Enceladus",
+          "diameter": "504 km",
+          "mass": "1.08 × 10²⁰ kg",
+          "distance": "238,020 km",
+          "orbitalPeriod": "1.37 days",
+          "description": "A small, icy moon with geysers of water vapor and ice particles erupting from its south pole. Has a subsurface ocean.",
+          "discoveredBy": "William Herschel",
+          "discoveredYear": "1789",
+          "features": [
+            "Geysers of water vapor",
+            "Subsurface ocean",
+            "Icy, reflective surface",
+            "Potential for life",
+            "Active cryovolcanism"
+          ],
+          "color": "#F0F8FF",
+          "radius": 0.04
+        },
+        {
+          "id": "mimas",
+          "name": "Mimas",
+          "diameter": "396 km",
+          "mass": "3.75 × 10¹⁹ kg",
+          "distance": "185,539 km",
+          "orbitalPeriod": "0.94 days",
+          "description": "Known as the 'Death Star' moon due to its large crater. It's the smallest astronomical body known to be rounded by its own gravity.",
+          "discoveredBy": "William Herschel",
+          "discoveredYear": "1789",
+          "features": [
+            "Large Herschel crater",
+            "Death Star appearance",
+            "Icy surface",
+            "Smallest rounded moon",
+            "Heavily cratered"
+          ],
+          "color": "#C0C0C0",
+          "radius": 0.03
+        },
+        {
+          "id": "rhea",
+          "name": "Rhea",
+          "diameter": "1,527 km",
+          "mass": "2.31 × 10²¹ kg",
+          "distance": "527,108 km",
+          "orbitalPeriod": "4.52 days",
+          "description": "Saturn's second-largest moon. It has a heavily cratered surface and may have a tenuous ring system.",
+          "discoveredBy": "Giovanni Domenico Cassini",
+          "discoveredYear": "1672",
+          "features": [
+            "Second largest moon of Saturn",
+            "Heavily cratered surface",
+            "Possible ring system",
+            "Icy surface",
+            "Mix of old and young terrain"
+          ],
+          "color": "#D3D3D3",
+          "radius": 0.12
+        },
+        {
+          "id": "iapetus",
+          "name": "Iapetus",
+          "diameter": "1,469 km",
+          "mass": "1.81 × 10²¹ kg",
+          "distance": "3,560,820 km",
+          "orbitalPeriod": "79.3 days",
+          "description": "Known for its dramatic two-tone coloration - one side is dark, the other is bright. Has a prominent equatorial ridge.",
+          "discoveredBy": "Giovanni Domenico Cassini",
+          "discoveredYear": "1671",
+          "features": [
+            "Two-tone coloration",
+            "Equatorial ridge",
+            "Dark leading hemisphere",
+            "Bright trailing hemisphere",
+            "Distant orbit"
+          ],
+          "color": "#708090",
+          "radius": 0.12
+        },
+        {
+          "id": "dione",
+          "name": "Dione",
+          "diameter": "1,123 km",
+          "mass": "1.10 × 10²¹ kg",
+          "distance": "377,396 km",
+          "orbitalPeriod": "2.74 days",
+          "description": "A medium-sized moon with a heavily cratered surface and bright wispy features that are actually ice cliffs.",
+          "discoveredBy": "Giovanni Domenico Cassini",
+          "discoveredYear": "1684",
+          "features": [
+            "Bright wispy features",
+            "Ice cliffs",
+            "Heavily cratered",
+            "Icy surface",
+            "Possible subsurface ocean"
+          ],
+          "color": "#F5F5DC",
+          "radius": 0.09
+        },
+        {
+          "id": "tethys",
+          "name": "Tethys",
+          "diameter": "1,062 km",
+          "mass": "6.18 × 10²⁰ kg",
+          "distance": "294,619 km",
+          "orbitalPeriod": "1.89 days",
+          "description": "A medium-sized moon with a large impact crater called Odysseus and a huge valley called Ithaca Chasma.",
+          "discoveredBy": "Giovanni Domenico Cassini",
+          "discoveredYear": "1684",
+          "features": [
+            "Large Odysseus crater",
+            "Ithaca Chasma valley",
+            "Icy surface",
+            "Heavily cratered",
+            "Co-orbital with smaller moons"
+          ],
+          "color": "#E0E0E0",
+          "radius": 0.08
+        },
+        {
+          "id": "hyperion",
+          "name": "Hyperion",
+          "diameter": "270 km",
+          "mass": "5.62 × 10¹⁸ kg",
+          "distance": "1,481,009 km",
+          "orbitalPeriod": "21.3 days",
+          "description": "An irregularly shaped moon with a sponge-like appearance. It has a chaotic rotation and is one of the largest irregular moons.",
+          "discoveredBy": "William Cranch Bond",
+          "discoveredYear": "1848",
+          "features": [
+            "Sponge-like appearance",
+            "Chaotic rotation",
+            "Irregular shape",
+            "Very porous surface",
+            "Dark reddish color"
+          ],
+          "color": "#8B4513",
+          "radius": 0.02
+        },
+        {
+          "id": "phoebe",
+          "name": "Phoebe",
+          "diameter": "213 km",
+          "mass": "8.29 × 10¹⁸ kg",
+          "distance": "12,947,783 km",
+          "orbitalPeriod": "550.6 days",
+          "description": "A retrograde irregular moon, likely a captured object from the Kuiper Belt. It's very dark and has a retrograde orbit.",
+          "discoveredBy": "William Henry Pickering",
+          "discoveredYear": "1899",
+          "features": [
+            "Retrograde orbit",
+            "Likely captured Kuiper Belt object",
+            "Very dark surface",
+            "Irregular shape",
+            "Distant orbit"
+          ],
+          "color": "#2F2F2F",
+          "radius": 0.017
+        },
+        {
+          "id": "janus",
+          "name": "Janus",
+          "diameter": "179 km",
+          "mass": "1.90 × 10¹⁸ kg",
+          "distance": "151,460 km",
+          "orbitalPeriod": "0.69 days",
+          "description": "A small moon that shares its orbit with Epimetheus. They periodically swap orbits in a unique orbital dance.",
+          "discoveredBy": "Audouin Dollfus",
+          "discoveredYear": "1966",
+          "features": [
+            "Co-orbital with Epimetheus",
+            "Orbital swap every 4 years",
+            "Irregular shape",
+            "Heavily cratered",
+            "Icy surface"
+          ],
+          "color": "#C0C0C0",
+          "radius": 0.014
+        },
+        {
+          "id": "epimetheus",
+          "name": "Epimetheus",
+          "diameter": "116 km",
+          "mass": "5.3 × 10¹⁷ kg",
+          "distance": "151,410 km",
+          "orbitalPeriod": "0.69 days",
+          "description": "A small moon that shares its orbit with Janus. They periodically swap orbits in a unique orbital dance.",
+          "discoveredBy": "Richard Walker",
+          "discoveredYear": "1966",
+          "features": [
+            "Co-orbital with Janus",
+            "Orbital swap every 4 years",
+            "Irregular shape",
+            "Heavily cratered",
+            "Icy surface"
+          ],
+          "color": "#D3D3D3",
+          "radius": 0.009
+        },
+        {
+          "id": "prometheus",
+          "name": "Prometheus",
+          "diameter": "86.2 km",
+          "mass": "1.60 × 10¹⁷ kg",
+          "distance": "139,380 km",
+          "orbitalPeriod": "0.61 days",
+          "description": "An inner shepherd moon that helps maintain Saturn's F ring. It's elongated and potato-shaped.",
+          "discoveredBy": "Stewart A. Collins",
+          "discoveredYear": "1980",
+          "features": [
+            "Shepherd moon for F ring",
+            "Elongated shape",
+            "Irregular potato-like shape",
+            "Helps maintain ring structure",
+            "Fast orbital period"
+          ],
+          "color": "#A9A9A9",
+          "radius": 0.007
+        },
+        {
+          "id": "pandora",
+          "name": "Pandora",
+          "diameter": "81.4 km",
+          "mass": "1.37 × 10¹⁷ kg",
+          "distance": "141,720 km",
+          "orbitalPeriod": "0.63 days",
+          "description": "An inner shepherd moon that helps maintain Saturn's F ring. It's elongated and irregularly shaped.",
+          "discoveredBy": "Stewart A. Collins",
+          "discoveredYear": "1980",
+          "features": [
+            "Shepherd moon for F ring",
+            "Elongated shape",
+            "Irregular shape",
+            "Helps maintain ring structure",
+            "Fast orbital period"
+          ],
+          "color": "#B0B0B0",
+          "radius": 0.006
+        }
+      ],
       "description": "Famous for its spectacular ring system. The least dense planet, it would float in water. Has a hexagonal storm at its north pole.",
       "composition": "Rocky core, layer of liquid metallic hydrogen, liquid hydrogen and helium, gaseous atmosphere",
       "atmosphere": "96% hydrogen, 3% helium, traces of methane and ammonia",
@@ -175,6 +742,48 @@
       "dayLength": "17.2 hours",
       "yearLength": "84 Earth years",
       "moons": 27,
+      "moonList": [
+        {
+          "id": "titania",
+          "name": "Titania",
+          "diameter": "1,578 km",
+          "mass": "3.40 × 10²¹ kg",
+          "distance": "436,300 km",
+          "orbitalPeriod": "8.71 days",
+          "description": "Uranus's largest moon, named after the queen of the fairies in Shakespeare's A Midsummer Night's Dream. It has a mix of cratered and smooth terrain.",
+          "discoveredBy": "William Herschel",
+          "discoveredYear": "1787",
+          "features": [
+            "Largest moon of Uranus",
+            "Mix of old and young terrain",
+            "Possible subsurface ocean",
+            "Icy surface",
+            "Deep canyons"
+          ],
+          "color": "#B0C4DE",
+          "radius": 0.12
+        },
+        {
+          "id": "oberon",
+          "name": "Oberon",
+          "diameter": "1,523 km",
+          "mass": "3.01 × 10²¹ kg",
+          "distance": "583,520 km",
+          "orbitalPeriod": "13.46 days",
+          "description": "Uranus's second-largest moon and outermost major moon. It has a dark, heavily cratered surface with bright material in some craters.",
+          "discoveredBy": "William Herschel",
+          "discoveredYear": "1787",
+          "features": [
+            "Second largest moon of Uranus",
+            "Heavily cratered surface",
+            "Dark, old surface",
+            "Bright material in craters",
+            "Outermost major moon"
+          ],
+          "color": "#696969",
+          "radius": 0.12
+        }
+      ],
       "description": "An ice giant that rotates on its side. Its blue-green color comes from methane in its atmosphere. Has faint rings and 27 moons.",
       "composition": "Rocky core, mantle of water, methane, and ammonia ices, atmosphere of hydrogen and helium",
       "atmosphere": "83% hydrogen, 15% helium, 2% methane",
@@ -201,6 +810,28 @@
       "dayLength": "16.1 hours",
       "yearLength": "165 Earth years",
       "moons": 16,
+      "moonList": [
+        {
+          "id": "triton",
+          "name": "Triton",
+          "diameter": "2,707 km",
+          "mass": "2.14 × 10²² kg",
+          "distance": "354,759 km",
+          "orbitalPeriod": "5.88 days",
+          "description": "Neptune's largest moon and the only large moon with a retrograde orbit. It's geologically active with nitrogen geysers and has a thin atmosphere.",
+          "discoveredBy": "William Lassell",
+          "discoveredYear": "1846",
+          "features": [
+            "Retrograde orbit",
+            "Geologically active",
+            "Nitrogen geysers",
+            "Thin nitrogen atmosphere",
+            "Likely a captured Kuiper Belt object"
+          ],
+          "color": "#E0E0E0",
+          "radius": 0.21
+        }
+      ],
       "description": "The windiest planet with speeds up to 2,100 km/h. Deep blue color from methane. The farthest planet from the Sun.",
       "composition": "Rocky core, mantle of water, methane, and ammonia ices, atmosphere of hydrogen, helium, and methane",
       "atmosphere": "80% hydrogen, 19% helium, 1% methane",

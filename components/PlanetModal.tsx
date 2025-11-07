@@ -2,13 +2,15 @@
 
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaTimes, FaTemperatureHigh, FaCalendarAlt, FaMoon, FaRuler, FaWeight, FaInfoCircle } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
+import { FaTimes, FaTemperatureHigh, FaCalendarAlt, FaMoon, FaRuler, FaWeight, FaInfoCircle, FaArrowRight } from 'react-icons/fa'
 import { useSpaceStore } from '@/store/useSpaceStore'
 import planetsData from '@/data/planets.json'
 import { Planet } from '@/types'
 
 export default function PlanetModal() {
-  const { selectedPlanet, isModalOpen, setIsModalOpen, setSelectedPlanet } = useSpaceStore()
+  const router = useRouter()
+  const { selectedPlanet, isModalOpen, setIsModalOpen, setSelectedPlanet, setIsNavigating, setPreviousRoute } = useSpaceStore()
 
   useEffect(() => {
     if (isModalOpen) {
@@ -38,6 +40,14 @@ export default function PlanetModal() {
   const handleClose = () => {
     setIsModalOpen(false)
     setSelectedPlanet(null)
+  }
+
+  const handleViewDetails = () => {
+    if (!selectedPlanet) return
+    setIsNavigating(true)
+    setPreviousRoute(window.location.pathname)
+    setIsModalOpen(false)
+    router.push(`/planet/${selectedPlanet}`)
   }
 
   if (!selectedPlanet || !isModalOpen) return null
@@ -164,7 +174,7 @@ export default function PlanetModal() {
             </div>
 
             {/* Features */}
-            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700 mb-8">
               <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {planet.features.map((feature, index) => (
@@ -174,6 +184,20 @@ export default function PlanetModal() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex justify-center">
+              <button
+                onClick={handleViewDetails}
+                className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-bold rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center space-x-2"
+                style={{
+                  boxShadow: `0 0 20px ${planet.color}66`,
+                }}
+              >
+                <span>Explore {planet.name} & Moons</span>
+                <FaArrowRight />
+              </button>
             </div>
           </div>
         </motion.div>

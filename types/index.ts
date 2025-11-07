@@ -1,3 +1,18 @@
+export interface Moon {
+  id: string
+  name: string
+  diameter: string
+  mass: string
+  distance: string
+  orbitalPeriod: string
+  description: string
+  discoveredBy?: string
+  discoveredYear?: string
+  features: string[]
+  color: string
+  radius: number
+}
+
 export interface Planet {
   id: string
   name: string
@@ -10,6 +25,7 @@ export interface Planet {
   dayLength: string
   yearLength: string
   moons: number
+  moonList?: Moon[]
   description: string
   composition: string
   atmosphere: string

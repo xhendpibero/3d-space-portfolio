@@ -2,11 +2,33 @@
 
 import { Suspense, useRef, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Stars, OrbitControls, Text } from '@react-three/drei'
+import { Stars, OrbitControls, Text, useGLTF } from '@react-three/drei'
 import { MOUSE, TOUCH, Vector3 } from 'three'
 import { useSpaceStore } from '@/store/useSpaceStore'
 import planetsData from '@/data/planets.json'
 import { Planet as PlanetType } from '@/types'
+
+// Load the 3D model
+function PlanetModel({ scale, color }: { scale: number; color: string }) {
+  const { scene } = useGLTF('/assets/3d/earth.glb')
+  const clonedScene = useMemo(() => {
+    const clone = scene.clone()
+    // Apply color tint to the model
+    clone.traverse((child: any) => {
+      if (child.isMesh && child.material) {
+        child.material = child.material.clone()
+        child.material.color.set(color)
+        if (child.material.emissive) {
+          child.material.emissive.set(color)
+          child.material.emissiveIntensity = 0.2
+        }
+      }
+    })
+    return clone
+  }, [scene, color])
+  
+  return <primitive object={clonedScene} scale={scale} />
+}
 
 function Planet({
   planet,
@@ -52,7 +74,7 @@ function Planet({
   return (
     <group ref={groupRef} position={[Math.cos(initialAngle) * distance, 0, Math.sin(initialAngle) * distance]}>
       {/* Planet */}
-      <mesh
+      <group
         ref={meshRef}
         scale={interactiveScale}
         onClick={(e) => {
@@ -63,15 +85,21 @@ function Planet({
         onPointerEnter={() => setHoveredPlanet(planet.id)}
         onPointerLeave={() => setHoveredPlanet(null)}
       >
-        <sphereGeometry args={[displayRadius, 32, 32]} />
-        <meshStandardMaterial
-          color={planet.color}
-          emissive={planet.color}
-          emissiveIntensity={isSelected || isHovered ? 0.3 : 0.1}
-          metalness={0.3}
-          roughness={0.7}
-        />
-      </mesh>
+        <Suspense fallback={
+          <mesh>
+            <sphereGeometry args={[displayRadius, 32, 32]} />
+            <meshStandardMaterial
+              color={planet.color}
+              emissive={planet.color}
+              emissiveIntensity={isSelected || isHovered ? 0.3 : 0.1}
+              metalness={0.3}
+              roughness={0.7}
+            />
+          </mesh>
+        }>
+          <PlanetModel scale={displayRadius} color={planet.color} />
+        </Suspense>
+      </group>
 
       {/* Planet label */}
       {(isHovered || isSelected) && (
@@ -86,6 +114,31 @@ function Planet({
         </Text>
       )}
     </group>
+  )
+}
+
+function OrbitRing({ planet, distance }: { planet: PlanetType; distance: number }) {
+  const { setSelectedPlanet, setIsModalOpen, hoveredPlanet, setHoveredPlanet } = useSpaceStore()
+  const isHovered = hoveredPlanet === planet.id
+  
+  return (
+    <mesh 
+      rotation={[-Math.PI / 2, 0, 0]}
+      onClick={(e) => {
+        e.stopPropagation()
+        setSelectedPlanet(planet.id)
+        setIsModalOpen(true)
+      }}
+      onPointerEnter={() => setHoveredPlanet(planet.id)}
+      onPointerLeave={() => setHoveredPlanet(null)}
+    >
+      <ringGeometry args={[distance - 0.05, distance + 0.05, 128]} />
+      <meshBasicMaterial 
+        color={planet.color} 
+        opacity={isHovered ? 0.5 : 0.25} 
+        transparent 
+      />
+    </mesh>
   )
 }
 
@@ -141,15 +194,16 @@ function OrbitingPlanets() {
         <pointLight intensity={3} distance={50} decay={2} />
       </mesh>
 
-      {/* Orbits (centered at the sun) */}
+      {/* Orbits (centered at the sun) - Clickable */}
       {filteredPlanets.map((planet, index) => {
         const distanceScale = useRealScale ? 6 : 3
         const distance = planet.distanceAU * distanceScale
         return (
-          <mesh key={`orbit-${planet.id}`} rotation={[-Math.PI / 2, 0, 0]}>
-            <ringGeometry args={[distance - 0.03, distance + 0.03, 128]} />
-            <meshBasicMaterial color={planet.color} opacity={0.25} transparent />
-          </mesh>
+          <OrbitRing 
+            key={`orbit-${planet.id}`}
+            planet={planet}
+            distance={distance}
+          />
         )
       })}
 
@@ -227,4 +281,7 @@ export default function SpaceScene() {
     </div>
   )
 }
+
+// Preload the model
+useGLTF.preload('/assets/3d/earth.glb')
 
