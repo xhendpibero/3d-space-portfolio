@@ -26,7 +26,7 @@ export default function MoonListPanel({ planet }: MoonListPanelProps) {
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
-      className="fixed bottom-24 right-4 z-50"
+      className="fixed bottom-16 left-4 z-50"
     >
       {/* Collapsed floating button */}
       {!isOpen && (
